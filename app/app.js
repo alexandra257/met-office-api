@@ -14,7 +14,7 @@ class LocalWeather {
     const requestedLocationID = requestedLocation[0].id;
     console.log(requestedLocation, requestedLocationID)
 
-    const location = await this.weatherAPI.getLocationData(requestedLocationID);
+    const location = await this.weatherAPI.getLocationData(requestedLocation, requestedLocationID);
 
     console.log(location);
   }

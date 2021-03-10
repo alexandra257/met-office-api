@@ -17,12 +17,13 @@ getSitelistData = async () => {
   }
 };
 
-getLocationData = async (location) => {
+getLocationData = async (location, locationID) => {
   try {
-    const weatherUrl = `http://datapoint.metoffice.gov.uk/public/data/val/wxfcs/all/json/${location}?res=3hourly&key=${this.key}`;
+    const weatherUrl = `http://datapoint.metoffice.gov.uk/public/data/val/wxfcs/all/json/${locationID}?res=3hourly&key=${this.key}`;
     const response = await axios.get(weatherUrl);
     const locationData = response.data;
-    console.log(locationData.SiteRep.DV.Location.name);
+    const precipitation = locationData.SiteRep.DV.Location.Period[0].Rep[0].Pp;
+    console.log('The current chance of rainfall in ', location[0].name, 'is ', precipitation, '%');
   }
   catch (e) {
     console.error(e);
