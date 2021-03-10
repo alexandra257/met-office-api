@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
+  "type": "module",
   "dependencies": {
     "axios": "^0.21.1",
     "readline-sync": "^1.4.10"
@@ -13,4 +14,5 @@
   },
   "author": "",
   "license": "ISC"
+
 }
