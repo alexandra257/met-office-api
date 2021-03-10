@@ -8,7 +8,6 @@ class LocalWeather {
 
   findUserLocation = async () => {
     const locationsList = await this.weatherAPI.getSitelistData();
-    // console.log(locationsList);
     const userLocation = readlineSync.question('Enter your location: ');
 
     const requestedLocation = locationsList.filter(location => location.name === userLocation);
